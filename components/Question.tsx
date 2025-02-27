@@ -2,6 +2,7 @@ import { IQuestion } from '@/utils/types'
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/outline';
 import React, { useState } from 'react'
 
+
 interface Props {
   question: IQuestion;
   withId: boolean;
@@ -10,8 +11,8 @@ interface Props {
 }
 const Question = ({ question, withId, checkEnabled, getAnswer }: Props) => {
   const [answer, setAnswer] = useState(0)
-  const [isAnswered, setisAnswered] = useState(false)
-  const [isTrue, setisTrue] = useState(false)
+  const [isAnswered, setIsAnswered] = useState(false)
+  const [isTrue, setIsTrue] = useState(false)
 
   return (
     <div
@@ -28,7 +29,7 @@ const Question = ({ question, withId, checkEnabled, getAnswer }: Props) => {
           key={option.id}
           onClick={() => {
             setAnswer(option.id)
-            setisAnswered(false)
+            setIsAnswered(false)
             if (getAnswer) {
               getAnswer(question.answer === answer)
             }

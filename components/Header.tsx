@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { XCircleIcon, Bars3Icon } from "@heroicons/react/24/outline"
 
 const Header = () => {
-  const [open, setopen] = useState(false)
+  const [open, setOpen] = useState(false)
   const routes = [
     { title: 'Home', path: '/' },
     { title: 'Question', path: '/question' },
@@ -23,11 +23,11 @@ const Header = () => {
         <XCircleIcon
           className={`w-8 h-8 stroke-slate-50 mb-4`}
           stroke='2'
-          onClick={() => setopen(false)}
+          onClick={() => setOpen(false)}
         />
         <div
           className="flex flex-col space-y-4"
-          onClick={() => setopen(false)}
+          onClick={() => setOpen(false)}
         >
           {routes.map((route) => (
             <Link
@@ -60,7 +60,7 @@ const Header = () => {
           ))}
         </nav>
         <Bars3Icon
-          onClick={() => setopen(!open)}
+          onClick={() => setOpen(!open)}
           className={'lg:hidden stroke-indigo-50 w-6 h-6'}
         />
       </div>
