@@ -1,5 +1,7 @@
+'use client'
 import { IQuestion } from '@/utils/types'
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/outline';
+import { motion, AnimatePresence } from 'motion/react';
 import React, { useState } from 'react'
 
 
@@ -62,6 +64,33 @@ const Question = ({ question, withId, checkEnabled, getAnswer }: Props) => {
           <span className={'w-full'}>{option.text}</span>
         </label>
       ))}
+
+      {
+        checkEnabled && answer > 0 && !isAnswered &&
+        <AnimatePresence>
+          <motion.div
+            key='answer'
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 40 }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            style={{ overflow: "hidden"}}
+          >
+
+            <div
+              onClick={() => {
+                setIsAnswered(true)
+                setIsTrue(question.answer === answer)
+              }}
+              className={`bg-blue-600 p-2 text-slate-50 rounded
+            text-center shadow hover:bg-blue-500 duration-200 cursor-pointer`}
+            >
+              답변을 확인하세요.
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      }
+
 
     </div>
   )
