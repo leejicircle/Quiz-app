@@ -1,8 +1,9 @@
+import QuizForm from '@/components/QuizForm'
 import React from 'react'
 
 const QuizPage = () => {
   return (
-    <div>QuizPage</div>
+    <QuizForm/>
   )
 }
 
