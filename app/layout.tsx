@@ -29,16 +29,16 @@ export default function RootLayout({
         className={"bg-gray-50"}
       >
         <div
-        className={"bg-slate-200 max-w-7xl mx-auto shadow-xl border-1 min-h[52rem] border-gray-600"}>
+          className={"bg-slate-200 max-w-7xl mx-auto shadow-xl border-1 min-h[52rem] border-gray-600"}>
           <Header />
           {children}
-          <footer
-          className={"max-w-7xl mx-auto bg-orange-500 p-10 text-center text-slate-200"}
-          >
-            footer
-          </footer>
-        </div>
 
+        </div>
+        <footer
+          className={"max-w-7xl mx-auto bg-orange-500 p-10 text-center text-slate-200"}
+        >
+          footer
+        </footer>
       </body>
     </html>
   );
