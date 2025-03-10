@@ -33,13 +33,14 @@ const QuizForm = () => {
   const passed = () => answers.filter(a => a).length >= 2
   
   const newStart = () => {
+    setQuizEnded(false)
     setQuizStarted(false)
     setAnswered(false)
     setcurrentAnswer(false)
     setState(1)
     setCurrentQuestion(0)
     setQuestions([])
-    setQuizEnded(false)
+   
   }
 
   return (
